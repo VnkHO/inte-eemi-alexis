@@ -55,6 +55,10 @@
 .section-success {
     @extend %home-section;
     @extend %flexColumnC;
+
+    @include respond(desktop) {
+        margin-bottom: 6rem;
+    }
 }
 
 .section-about {
