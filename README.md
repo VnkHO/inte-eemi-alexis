@@ -1,5 +1,7 @@
 # inte-eemi-alexis
 
+https://inte-eemi-alexis.netlify.com/
+
 Il faut utiliser parceljs pour installer et lancer le projet:
 https://parceljs.org/getting_started.html
 
