@@ -1,0 +1,44 @@
+body {
+  font-family: var(--font-primary);
+  font-weight: 400;
+}
+
+%heading {
+  font-family: var(--font-title);
+  font-weight: bold;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.heading-primary {
+  @extend %heading;
+  font-size: var(--heading-primary-font-size);
+  line-height: 1.4;
+  @include respond(desktop) {
+    text-align: left;
+  }
+}
+
+.heading-secondary {
+  @extend %heading;
+  font-size: var(--heading-secondary-font-size);
+  line-height: 2;
+  color: var(--color-title-gray);
+  margin-bottom: 2rem;
+
+    @include respond(tab) {
+        margin-bottom: 0;
+    }
+}
+
+.heading-tertiary {
+  font-size: var(--heading-tertiary-font-size);
+  line-height: 1.5;
+  text-align: center;
+  color: var(--color-text-gray);
+}
+
+.paragraph {
+  font-size: var(--default-font-size);
+  line-height: 1.5;
+}

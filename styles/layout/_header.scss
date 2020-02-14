@@ -1,0 +1,110 @@
+.header {
+
+    position: relative;
+    padding: 3rem 2rem 0;
+    overflow-x: hidden;
+
+    @include respond(tab) {
+        padding: 4rem;
+    }
+
+    @include respond(small-desktop) {
+        padding: 4rem 6rem;
+    }
+
+    // Header Content
+    &__content {
+            position: relative;
+            z-index: 1;
+
+            @include respond(desktop) {
+                @include containerMaxWidth;
+            }
+        
+            &-container {
+                @include flexColumnCenter;
+                width: 100%;
+                height: 100%;
+                padding: 2rem;
+
+                @include respond(desktop) {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                }
+
+            }
+
+            @include respond(desktop) {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            // Header Content Title
+            &-title {
+                
+                &-primary {
+                    width: 100%;
+                    margin-bottom: 2.7rem;
+                    color: var(--color-home-text);
+    
+                    &--span {
+                        display: block;
+                    }
+                }
+    
+                &-secondary {
+                    width: 100%;
+                    margin-bottom: 6rem;
+                    font-size: 2rem;
+                    text-align: center;
+                    line-height: 1.45;
+                    color: var(--color-home-text);
+
+                    @include respond(desktop) {
+                        text-align: left;
+                    }
+                }
+    
+            }
+        
+            // Header Content Background image
+            &--bg {
+                display: none;
+                visibility: hidden;
+
+                @include respond(desktop) {
+                    display: block;
+                    visibility: visible;
+                    width: 100%;
+                    height: 30vh;
+                    background-image: url('/img/homepage.svg');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: top center;
+                }
+        }
+    }
+
+    // Header Logo
+
+    &__logo {
+
+        margin-bottom: 4rem;
+        z-index: 10;
+
+        @include respond(desktop) {
+            margin-bottom: 0;
+        } 
+
+        &-link {
+            z-index: 20;
+
+        }
+
+        &-img {
+            @include imgCover;
+        }
+    }
+}

@@ -1,0 +1,234 @@
+.about {
+
+    &__title-container {
+        margin-bottom: 8rem;
+    }
+
+    &__title {
+        color: var(--color-text-white);
+    }
+
+    &__description {
+        color: rgba(252, 252, 252, .24);
+    }
+
+    // Background photo 
+
+    &__photo-bg-container {
+        display: none;
+        visibility: hidden;
+
+        @include respond(tab) {
+            display: block;
+            visibility: visible;
+
+        }
+    }
+    
+    &__photo-bg {
+        
+        position: absolute;
+        width: 10rem;
+        height: 10rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+
+        &--1 {
+            top: 5rem;
+            left: 4rem;
+            background-image: url("/img/about_photo-01.svg");
+            
+            @include respond(desktop) {
+                top: 10rem;
+                left: 20rem;
+            }
+        }
+
+        &--2 {
+            top: 5rem;
+            right: 4rem;
+            background-image: url("/img/about_photo-02.svg");
+            
+            @include respond(desktop) {
+                top: 10rem;
+                right: 20rem;
+            }
+        }
+
+        &--3 {
+            top: 17rem;
+            left: 4rem;
+            background-image: url("/img/about_photo-03.svg");
+            
+            @include respond(desktop) {
+                top: 21rem;
+                left: 5rem;
+            }
+        }
+
+        &--4 {
+            top: 17rem;
+            right: 4rem;
+            background-image: url("/img/about_photo-04.svg");
+            
+            @include respond(desktop) {
+                top: 23rem;
+                left: 22rem;
+            }
+        }
+
+        &--5 {
+            top: 25rem;
+            left: 18rem;
+            background-image: url("/img/about_photo-05.svg");
+            
+            @include respond(desktop) {
+                top: 21rem;
+                left: 38rem;
+            }
+        }
+
+        &--6 {
+            top: 25rem;
+            right: 18rem;
+            background-image: url("/img/about_photo-06.svg");
+            
+            @include respond(desktop) {
+                top: 21rem;
+                right: 38rem;
+            }
+        }
+
+        &--7 {
+            top: 34rem;
+            left: 4rem;
+            background-image: url("/img/about_photo-07.svg");
+            
+            @include respond(desktop) {
+                top: 23rem;
+                left: initial;
+                right: 22rem;
+            }
+        }
+
+        &--8 {
+            top: 34rem;
+            right: 4rem;
+            background-image: url("/img/about_photo-08.svg");
+            
+            @include respond(desktop) {
+                top: 21rem;
+                right: 5rem;
+            }
+        }
+
+        &--9 {
+            top: 52rem;
+            left: 4rem;
+            background-image: url("/img/about_photo-09.svg");
+            
+            @include respond(desktop) {
+                top: 42rem;
+                left: 15rem;
+            }
+        }
+
+        &--10 {
+            top: 52rem;
+            right: 4rem;
+            background-image: url("/img/about_photo-10.svg");
+            
+            @include respond(desktop) {
+                top: 42rem;
+                right: 15rem;
+            }
+        }
+    }
+
+    // Content 
+
+    &__content {
+        
+        @include flexColumnCenter;
+        
+        @include respond(desktop) {
+            width: 100%;
+            max-width: 100rem;
+        }
+
+        &-img {
+            @include imgCover;
+        }
+
+        &-rating {
+            position: relative;
+            top: -4rem;
+            padding: 2rem;
+            font-size: 2rem;
+            color: var(--color-text-white);
+            background-color: var(--color-about-us-rating);
+            border-radius: 50%;
+        }
+
+        &-description {
+            @include flexColumnCenter;
+        }
+
+        &-feedback {
+            margin-bottom: 2rem;
+            color: var(--color-about-us-text);
+            text-align: center;
+        }
+
+        &-author {
+            margin-bottom: 1.2rem;
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--color-about-us-name);
+        }
+
+        &-job {
+            margin-bottom: 8rem;
+            color: var(--color-about-us-text);
+        }
+
+        & > .hr {
+            margin-bottom: 5rem;
+            background-color: hsl(0, 0%, 44%);
+            opacity: .3;
+        }
+    }
+
+
+    // Hiring 
+
+    &__hiring {
+
+        @include respond(desktop) {
+            width: 100%;
+            max-width: 100rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &-about {
+            margin-bottom: 2rem;
+            color: var(--color-text-white);
+            opacity: .3;
+        }
+
+        &-title {
+            margin-bottom: 4rem;
+            font-size: 3rem;
+            color: var(--color-text-white);
+
+            &--span {
+                @include respond(desktop) {
+                    display: block;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,94 @@
+.success {
+
+    &__container {
+
+        @include respond(tab) {
+            width: 100%;
+            height: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        @include respond(desktop) {
+            gap: 2rem 7rem;
+        }
+    }
+
+    &__description {
+        @include respond(tab) {
+            margin-bottom: 4rem;
+        }
+    }
+
+    // Success Card
+    &__card {
+        padding: 2rem;
+
+        @include respond(tab) {
+            padding: 0;
+        }
+
+        @include respond(desktop) {
+            max-width: 35rem;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+
+            @include respond(tab) {
+                margin-bottom: 0;
+            }
+        
+        }
+
+    // Success Card Description
+        &-description {
+            @include flexColumnCenter;
+            padding: 6rem;
+            border-radius: 3rem;
+            box-shadow: 0 1rem 3rem 0 rgba(197, 195, 249, .4);
+
+            @include respond(tab) {
+                padding: 4rem 2rem;
+            }
+
+        }
+
+        &-value {
+            max-width: 18.5rem;
+            width: 100%;
+            padding: 6rem 5rem;
+            font-size: 3.8rem;
+            font-family: var(--font-title);
+            font-weight: 900;
+            text-align: center;
+            color: var(--color-text-white);
+            border-radius: 3rem;
+            margin-bottom: 1.8rem;
+
+            // Success Card Description Color
+            &--purple {
+                background-image: linear-gradient(143deg, var(--color-success-purple-light), var(--color-success-purple-dark));
+                box-shadow: 0 1rem 2rem 0 rgba(105, 83, 243, .6);
+            }
+
+            &--pink {
+                background-image: linear-gradient(143deg, var(--color-success-pink-light), var(--color-success-pink-dark));
+                box-shadow: 0 1rem 2rem 0 rgba(255, 97, 163, .6);
+
+            }
+
+            &--orange {
+                background-image: linear-gradient(143deg, var(--color-success-orange-light), var(--color-success-orange-dark));
+                box-shadow: 0 1rem 2rem 0 rgba(255, 139, 77, .6);
+
+            }
+        }
+
+        &-title {
+            text-transform: uppercase;
+            color: var(--color-text-black);
+        }
+    }
+}

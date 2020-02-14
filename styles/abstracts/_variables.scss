@@ -1,0 +1,105 @@
+:root {
+  // FONT
+  --default-font-size: 1.6rem;
+  --heading-primary-font-size: 4rem;
+  --heading-secondary-font-size: 2.4rem;
+  --heading-tertiary-font-size: 1.8rem;
+
+  --font-title: 'Lato', sans-serif;
+  --font-primary: 'Roboto', sans-serif;
+
+  // Margin - padding
+  --section-margin-bot: 6rem;
+
+  @include respond(tab) {
+    --section-margin-bot: 4rem;
+  }
+
+  // COLORS
+  // Main color - btn, logo title
+  --color-primary: hsl(242, 87%, 58%);
+
+  --btn-log-in: hsl(28, 100%, 57%);
+  
+  // Header text
+  --color-home-text: hsl(0, 4%, 31%);
+
+  --color-logo: hsl(211, 80%, 20%);
+
+  // Text default white
+  --color-text-white: hsl(210, 33%, 99%);
+
+  // Footer text black
+  --color-text-black: hsl(211, 25%, 39%);
+  
+  
+  // Secondary heading
+  --color-title-gray: hsl(0, 3%, 34%);
+  // Tertiary heading - Text
+  --color-text-gray: hsl(0, 0%, 45%);
+
+  // Background section
+  --color-background-section: hsl(210, 33%, 99%);
+
+  // Background About us
+  --color-background-purple-dark: hsl(235, 61%, 12%);
+
+  // Background color section success
+  --color-background-success-white: hsl(0, 0%, 97%);
+  --color-success-video-text: hsl(0, 0%, 41%);
+
+    // Success text
+  --color-success-label: hsl(211, 25%, 39%);
+
+    // About text
+  --color-about-us-text: hsl(0, 0%, 84%);
+
+  // Portfolio text
+  --color-portfolio-text: hsl(210, 6%, 61%);
+
+  // Linear Gradient
+  --color-orange-light: hsl(30, 94%, 73%);
+  --color-orange-dark: hsl(30, 63%, 66%);
+
+  --color-turquoise-light: hsl(178, 80%, 59%);
+  --color-turquoise-dark: hsl(194, 69%, 43%);
+
+  --color-black-purple-light: hsl(258, 32%, 47%);
+  --color-black-purple-dark: hsl(259, 28%, 31%);
+  
+  --color-blue-light: hsl(212, 61%, 54%);
+  --color-blue-dark: hsl(212, 91%, 40%);
+  
+  --color-purple-light: hsl(242, 82%, 80%);
+  --color-purple-dark: hsl(243, 62%, 57%);
+
+  --color-red-light: hsl(356, 100%, 75%);
+  --color-red-dark: hsl(0, 40%, 43%);
+
+  --color-about-us-rating: hsl(31, 100%, 59%);
+  --color-about-us-name: hsl(242, 100%, 77%);
+
+  // Success linear gradient
+
+  --color-success-purple-light: hsl(255, 96%, 79%);
+  --color-success-purple-dark: hsl(248, 87%, 64%);
+
+  --color-success-pink-light: hsl(351, 100%, 79%);
+  --color-success-pink-dark: hsl(335, 100%, 69%);
+
+  --color-success-orange-light: hsl(26, 92%, 81%);
+  --color-success-orange-dark: hsl(21, 100%, 65%);
+
+  --color-success-blue-dark: hsl(235, 73%, 28%);
+  --color-success-purple-light: hsl(242, 82%, 80%);
+
+  --color-workflow-blue: hsl(242, 87%, 58%);
+  --color-workflow-purple-light: hsl(242, 53%, 73%);
+  --color-workflow-yellow: hsl(38, 100%, 62%);
+  --color-workflow-red-light: hsl(0, 71%, 67%);
+  --color-workflow-purple: hsl(241, 23%, 51%);
+  --color-workflow-orange: hsl(20, 87%, 58%);
+  --color-workflow-turquoise: hsl(164, 87%, 58%);
+  --color-workflow-magenta: hsl(304, 87%, 58%);
+  --color-workflow-red: hsl(2, 87%, 58%);
+}

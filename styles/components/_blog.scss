@@ -1,0 +1,21 @@
+.blog {
+
+    &__card-container {
+
+        @include respond(tab) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem 2rem;
+        }
+
+        @include respond(desktop) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0 6rem;
+        }
+    }
+    
+    &__title-container {
+        margin-bottom: 4rem;
+    }
+}

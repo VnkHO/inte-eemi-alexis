@@ -1,0 +1,256 @@
+.navigation--bg {
+
+    display: none;
+    visibility: hidden;
+
+    @include respond(tab) {
+        display: block;
+        visibility: visible;
+        position: absolute;
+        top: -2rem;
+        right: -12rem;
+        width: 85%;
+        height: 80%;
+    
+        background-image: url("/img/homepage-wave.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: 1;
+    }
+
+    @include respond(desktop) {
+        width: 80%;
+    }
+}
+
+// Navigation mobile
+.mobile-navigation,
+.navigation {
+
+
+    &__checkbox {
+        display: none;
+    }
+    
+    &__button {
+        background-color: var(--color-text-white);
+        height: 7rem;
+        width: 7rem;
+        position: fixed;
+        top: 2rem;
+        right: 2rem;
+        border-radius: 50%;
+        z-index: 2000;
+        box-shadow: 0 1rem 3rem rgba(#030303, .1);
+        text-align: center;
+        cursor: pointer;
+    
+        @include respond(tab) {
+            top: 4rem;
+            right: 4rem;
+        }
+    }
+
+    &__background {
+        height: 6rem;
+        width: 6rem;
+        border-radius: 50%;
+        position: fixed;
+        top: 2.5rem;
+        right: 2.5rem;
+        background-image: radial-gradient(var(--color-primary), var(--color-blue-dark));
+        z-index: 1000;
+        transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+    
+        @include respond(tab) {
+            top: 4.5rem;
+            right: 4.5rem;
+        }
+    }
+
+
+    // Functionality
+    &__checkbox:checked ~ &__background {
+        transform: scale(80);
+    }
+
+    &__checkbox:checked ~ &__nav {
+        opacity: 1;
+        width: 100%;
+        display: block;
+        visibility: visible;
+    }
+
+
+    // Icon
+    &__icon {
+        position: relative;
+        margin-top: 3.5rem;
+
+        &,
+        &::before,
+        &::after {
+            width: 3rem;
+            height: 2px;
+            background-color: #030303;
+            display: inline-block;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+        }
+
+        &::before { top: -.8rem; }
+        &::after { top: .8rem; }
+    }
+
+    &__button:hover &__icon::before {
+        top: -1rem;
+    }
+
+    &__button:hover &__icon::after {
+        top: 1rem;
+    }
+
+    &__checkbox:checked + &__button &__icon {
+        background-color: transparent;
+    }
+
+    &__checkbox:checked + &__button &__icon::before {
+        top: 0;
+        transform: rotate(135deg);
+    }
+
+    &__checkbox:checked + &__button &__icon::after {
+        top: 0;
+        transform: rotate(-135deg);
+    }
+    
+
+}
+
+.navigation {
+
+    @include respond(desktop) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15rem;
+    }
+
+
+    &__nav {
+        width: 0;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+
+        display: none;
+        visibility: hidden;
+
+        opacity: 0;
+        transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+        @include respond(desktop) {
+            width: 100%;
+            height: auto;
+            position: initial;
+            top: initial;
+            left: initial;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            visibility: visible;
+            opacity: 1;
+        } 
+    }
+
+    &__list {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        list-style: none;
+        text-align: center;
+        width: 100%;
+
+        @include respond(desktop) {
+            position: initial;
+            top: initial;
+            left: initial;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            transform: initial;
+        } 
+    }
+
+    &__item {
+        margin: 1rem;
+
+        @include respond(desktop) {
+            margin: 0;
+        } 
+
+        &:not(:first-child) {
+            margin-left: 4.8rem;
+        }
+    }
+
+    &--btn {
+        margin-left: 2rem;
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            display: inline-block;
+            font-size: 3rem;
+            font-weight: 300;
+            padding: 1rem 2rem;
+            font-family: var(--font-title);
+            color: var(--color-text-white);
+            text-decoration: none;
+            text-transform: uppercase;
+            background-image: linear-gradient(120deg, transparent 0%, transparent 50%, var(--color-text-white) 50%);
+            background-size: 220%;
+            transition: all .4s;
+
+            @include respond(desktop) {
+                font-size: 1.8rem;
+                font-weight: bold;
+                padding: 0;
+                background-image: none;
+                background-size: initial;
+            } 
+        }
+        
+        &:hover,
+        &:active {
+            background-position: 100%;
+            color: var(--color-primary);
+            transform: translateX(1rem);
+        }
+    }
+}
+
+
+.mobile-navigation {
+
+    &__checkbox,
+    &__icon,
+    &__button,
+    &__background {
+        @include respond(desktop) {
+            display: none;
+            visibility: hidden;
+        }
+    }
+}

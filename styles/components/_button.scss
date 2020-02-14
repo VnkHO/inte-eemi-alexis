@@ -1,0 +1,94 @@
+.btn {
+    &:link,
+    &:visited {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        padding: 1.6rem 4.2rem;
+        border-radius: 10rem;
+    
+        font-size: 2rem;
+        text-transform: capitalize;
+        cursor: pointer;
+        transition: all .4s;
+    }
+    
+    // &:active,
+    // &:focus {
+    //     transform: translateY(-1px);
+    //     box-shadow: 0 .5rem 1rem rgba(var(--color-text-black), .2);
+    // }
+
+
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 10rem;
+        z-index: -1;
+        transition: all .4s;
+    }
+
+    // Button wave icon
+    &--wave::before {
+        content: '';
+        display: inline-block;
+        width: 3rem;
+        height: 3rem;
+        margin-right: 2rem;
+        background-image: url('/img/waving-hand.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
+    }
+
+    // Button Color
+    &--blue {
+        background-color: var(--color-primary);
+        color: var(--color-text-white);
+        border: none;
+
+        &::after {
+            background-color: var(--color-primary);
+        }
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 1rem 2rem rgba(61, 55, 241, .6);
+    
+            &::after {
+                transform: scaleX(1.4) scaleY(1.6);
+                opacity: 0;
+            }
+        }
+    }
+
+    &--white {
+        border: .2rem solid var(--color-text-white);
+        background-color: transparent;
+        color: var(--color-text-white);
+
+        &:hover {
+            background-color: var(--color-text-white);
+            color: var(--color-text-black);
+        }
+    }
+
+    &--orange,
+    &--orange:link,
+    &--orange:visited {
+        padding: 1.6rem 6rem;
+        font-family: var(--font-title);
+        color: var(--color-text-white);
+        background-color: var(--btn-log-in);
+    }
+
+    // Button Shadow
+    &--shadow {
+        box-shadow: 0rem .5rem 1.2rem .1rem rgba(61, 55, 241, .6);
+    } 
+}

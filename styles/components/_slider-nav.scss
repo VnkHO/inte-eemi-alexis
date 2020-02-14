@@ -1,0 +1,27 @@
+.slider {
+
+    // Slider navigation
+    &__navigation {
+        display: flex;
+        align-items: center;
+        @include respond(desktop) {
+            grid-column: 2 / 3;
+            margin: 0 auto;
+        }
+    }
+
+    &__item {
+        display: block;
+        width: 1.2rem;
+        height: 1.2rem;
+        margin: 0 .4rem;
+        border-radius: 50%;
+        background-color: rgba(61, 55, 241, .3);
+        
+        &--active {
+            width: 5rem;
+            border-radius: 2rem;
+            background-color: var(--color-primary);
+        }
+}
+}

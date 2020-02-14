@@ -1,0 +1,91 @@
+@mixin clearfix {
+  &::before, &::after {
+      content: "";
+      display: table;
+      clear: both;
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexColumnCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin imgCover {
+  display: block;
+  object-fit: cover;
+}
+
+@mixin containerMaxWidth {
+    max-width: 120rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+// @mixin heading-primary($size, $line-height) {
+//   font-size: $size;
+//   line-height: $line-height;
+//   font-family: var(--font-title);
+//   font-weight: bold;
+// }
+
+
+// MEDIA QUERY MANAGER
+/*
+0 - 374px:         Small Phone
+375px - 424px:     Phone
+425px - 767px:     Large Phone
+768px - 1023px:    Tablet
+1024px - 1199px:   Small Desktop
+1280px - 1919px:   Desktop
+1920px+ :          Large desktop
+
+
+$breakpoint arguement choices:
+- large-phone
+- tab
+- small-desktop
+- desktop
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (min-width: 23.4375em) { @content };    // 375px
+  }
+  @if $breakpoint == large-phone {
+    @media only screen and (min-width: 26.5625em) { @content };    // 425px
+  }
+  @if $breakpoint == tab {
+    @media only screen and (min-width: 48em) { @content };    // 768px
+  }
+  @if $breakpoint == small-desktop {
+    @media only screen and (min-width: 64em) { @content };    // 1024px
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 80em) { @content };    // 1200px
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 120em) { @content };    // 1920px
+  }
+}
+

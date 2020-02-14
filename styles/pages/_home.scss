@@ -1,0 +1,124 @@
+%home-section {
+    width: 100%;
+    height: 100%;
+    padding: 4rem 2rem;
+
+    @include respond(tab) {
+        padding: 4rem;
+    }
+
+    @include respond(small-desktop) {
+        padding: 4rem 6rem;
+    }
+
+    @include respond(desktop) {
+        @include containerMaxWidth;
+        padding: 4rem 0;
+    }
+    
+}
+
+%flexColumnC {
+    @include flexColumnCenter;
+}
+
+.section-services {
+    @extend %home-section;
+    @extend %flexColumnC;
+}
+
+.section-know-about {
+    @extend %home-section;
+    @extend %flexColumnC;
+
+    @include respond(desktop) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 10rem;
+    }
+}
+
+.section-portfolio {
+    @extend %home-section;
+    @extend %flexColumnC;
+
+    @include respond(desktop) {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: min-content;
+        column-gap: 10rem;
+        justify-content: start;
+        align-items: flex-start;
+    }
+}
+
+.section-success {
+    @extend %home-section;
+    @extend %flexColumnC;
+}
+
+.section-about {
+    @extend %home-section;
+    @extend %flexColumnC;
+    position: relative;
+    background-color: var(--color-background-purple-dark);
+
+    @include respond(desktop) {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.section-advantage {
+    @extend %home-section;
+    @extend %flexColumnC;
+
+}
+
+.section-workflow {
+    @extend %home-section;
+    @extend %flexColumnC;
+
+    @include respond(desktop) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-bottom: 10rem;
+    }
+
+}
+
+.section-blog {
+    @extend %home-section;
+    @extend %flexColumnC;
+
+}
+
+.section-partner {
+    @extend %home-section;
+    @extend %flexColumnC;
+}
+
+.section__bg {
+    display: none;
+    visibility: hidden;
+
+    @include respond(desktop) {
+        display: block;
+        visibility: visible;
+        width: 100%;
+        height: 35vh;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top center;
+    }
+
+    &--know-about {
+        background-image: url('/img/about_ui.svg');
+    }
+
+    &--workflow {
+        background-image: url('/img/workflow-photo.svg');
+    }
+}

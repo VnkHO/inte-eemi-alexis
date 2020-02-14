@@ -1,0 +1,84 @@
+.workflow {
+    &__description {
+        margin-bottom: 4rem;
+    }
+
+    // Workflow Color Palette
+    &__color-palette {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 4rem;
+
+        @include respond(tab) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem 3rem;
+        }
+
+        // Workflow Color Palette Description
+        &-container {
+            display: flex;
+        }
+
+        &-number {
+            display: inline-flex;
+            align-items: flex-start;
+            margin-right: 2rem;
+            
+            &-title {
+                padding: 2rem;
+                font-size: 2rem;
+                color: var(--color-text-white);
+                border-radius: 50%;
+
+                // Workflow Color Palette Color
+                &--1 {
+                    background-color: var(--color-workflow-blue);
+                }
+
+                &--2 {
+                    background-color: var(--color-workflow-purple-light);
+                }
+
+                &--3 {
+                    background-color: var(--color-workflow-yellow);
+                }
+
+                &--4 {
+                    background-color: var(--color-workflow-red-light);
+                }
+
+                &--5 {
+                    background-color: var(--color-workflow-purple);
+                }
+
+                &--6 {
+                    background-color: var(--color-workflow-orange);
+                }
+
+                &--7 {
+                    background-color: var(--color-workflow-turquoise);
+                }
+
+                &--8 {
+                    background-color: var(--color-workflow-magenta);
+                }
+                &--9 {
+                    background-color: var(--color-workflow-red);
+                }
+            }
+        }
+
+        // Workflow Color Palette Content
+        &-content {
+
+            &-title {
+                margin-bottom: 1rem;
+                text-align: left;
+            }
+
+            &-description {
+                color: var(--color-text-gray);
+            }
+        }
+    }
+}

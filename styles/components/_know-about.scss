@@ -1,0 +1,60 @@
+.know-about {
+
+    &__container {
+        @include respond(desktop) {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-self: flex-start;
+            align-items: flex-start;
+        }
+    }
+
+    // Know About Description
+    &__description {
+        margin-bottom: 3rem;
+    }
+
+    &__title,
+    &__description {
+        @include respond(desktop) {
+            text-align: left;
+        }
+    }
+
+    // Know About Video
+    &__video {
+        display: flex;
+        align-items: center;
+
+        &-play {
+            @include flexCenter;
+            position: relative;
+            width: 7rem;
+            height: 7rem;
+            background-color: var(--color-primary);
+            border-radius: 50%;
+        }
+
+        &-img {
+            display: block;
+            object-fit: cover;
+        }
+
+        &-description {
+            display: inline-flex;
+            align-items: center;
+            color: var(--color-success-video-text);
+
+            &::before {
+                content: '';
+                display: inline-block;
+                margin: 0 2.4rem;
+                width: 5rem;
+                height: .5rem;
+                background-color: var(--color-success-video-text);
+            }
+        }
+    }
+}
